@@ -12,7 +12,7 @@ int main(int argc, char** argv){
 			if (Event.Type == sf::Event::Closed)
 				App.Close();
 			// Escape key : exit
-			if ((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Keyboard::Key::Escape))
+			if ((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Keyboard::Escape))
 				App.Close();
 		}
 		//Clear everything
