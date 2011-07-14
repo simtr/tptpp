@@ -4,7 +4,7 @@ int main(int argc, char** argv){
 	// Create the main window
 	sf::RenderWindow App(sf::VideoMode(800, 600, 32), "SFML Window thingy");
 	// Start game loop
-	while (App.IsOpened()){
+	while (App.IsOpened()){ 
 		// Process events
 		sf::Event Event;
 		while (App.PollEvent(Event)){
