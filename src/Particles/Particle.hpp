@@ -5,6 +5,7 @@ class Particle{
 	Particle(){}
 	void Logic()=0;
 	void MoveLogic()=0;
+	void SetPos(int x, int y, int** partTable){}
 	private:
 	template<class T>changeType(Particle* p){}
 	
