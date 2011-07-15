@@ -11,8 +11,8 @@ Layer::Layer(int resX,int resY,int scaleFactor)
 }
 Layer::~Layer(){
 for(int i = 0; i < ResX;i++){
-	delete[] PartTable[i];
+	delete[] PartTable[i];}
 	delete Parts;
-	}
+	
 	
 	}
