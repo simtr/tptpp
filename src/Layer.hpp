@@ -1,8 +1,9 @@
 #include <SFML/Graphics.hpp>
 #inlcude "Particles/Particle.hpp"
 class Layer{
-	const int maxparts;
-	Particle parts[maxparts];
+	public:
+	const int MaxParts;
+	Particle parts[MaxParts];
 	Layer(){}
 	
 	
