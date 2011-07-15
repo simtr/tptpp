@@ -1,5 +1,5 @@
 #inlcude "Layer.hpp"
 Layer::Layer()
 {
-	maxparts = 235008;
+	maxparts = 612*384;
 }
