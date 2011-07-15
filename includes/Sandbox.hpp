@@ -1,6 +1,6 @@
 #ifndef SANDBOX_HPP
 #define SANDBOX_HPP
-namespace pt
+namespace sim
 {
 	class Sandbox
 	{

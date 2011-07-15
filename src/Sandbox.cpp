@@ -1,7 +1,6 @@
 #include <Sandbox.hpp>
-namespace pt
+using namespace sim;
+
+Sandbox::Sandbox(int width, int height, int subdivision)
 {
-	Sandbox::Sandbox(int width, int height, int subdivision)
-	{
-	}
 }
