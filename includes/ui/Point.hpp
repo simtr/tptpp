@@ -1,7 +1,7 @@
 #ifndef __SYS_POINT_H__
 #define __SYS_POINT_H__
 
-namespace sys
+namespace ui
 {
 
 struct Point

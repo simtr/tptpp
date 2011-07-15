@@ -1,10 +1,9 @@
-#include "Engine.h"
-#include "State.h"
-
+#include <ui/Engine.hpp>
+#include <ui/State.hpp>
 #include <vector>
-#include "Component.h"
+#include <ui/Component.hpp>
 
-using namespace sys;
+using namespace ui;
 
 State::State(Engine* engine)
 :

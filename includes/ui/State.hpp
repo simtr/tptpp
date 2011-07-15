@@ -3,10 +3,10 @@
 
 #include <vector>
 
-#include "Engine.h"
-#include "Component.h"
+#include "Engine.hpp"
+#include "Component.hpp"
 
-namespace sys
+namespace ui
 {
 	class Engine;
 	class Component;

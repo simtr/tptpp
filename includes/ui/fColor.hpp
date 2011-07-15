@@ -1,7 +1,7 @@
 #ifndef __SYS_COLOR_H__
 #define __SYS_COLOR_H__
 
-namespace sys
+namespace ui
 {
 
 struct Color3

@@ -2,9 +2,9 @@
 #define __SYS_ENGINE_H__
 
 #include <stdio.h>
-#include "State.h"
+#include "State.hpp"
 
-namespace sys
+namespace ui
 {
 	class State;
 

@@ -1,7 +1,7 @@
-#include "Engine.h"
-#include <sys/State.h>
+#include <ui/Engine.hpp>
+#include <ui/State.hpp>
 
-using namespace sys;
+using namespace ui;
 
 Engine::Engine(int width, int height)
 :

@@ -1,10 +1,10 @@
 #ifndef __SYS_COMPONENT_H__
 #define __SYS_COMPONENT_H__
 
-#include "Point.h"
-#include "State.h"
+#include "Point.hpp"
+#include "State.hpp"
 
-namespace sys
+namespace ui
 {	
 	class State;
 	

@@ -1,11 +1,9 @@
-#include "Engine.h"
+#include <ui/Engine.hpp>
+#include <ui/Point.hpp>
+#include <ui/State.hpp>
+#include <ui/Component.hpp>
 
-#include "Point.h"
-#include "State.h"
-
-#include "Component.h"
-
-using namespace sys;
+using namespace ui;
 
 Component::Component(State* s)
 :
