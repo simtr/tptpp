@@ -2,11 +2,12 @@
 #inlcude "Particles/Particle.hpp"
 class Layer{
 	public:
+	int Resx,ResY,ScaleFactor;
 	const int MaxParts;
-	int PartTable[612][384];
+	int** PartTable;
 	Particle Parts[MaxParts];
-	Layer(){}
-	
+	Layer(int,int,int){}
+	~Layer(){}
 	
 	
 	

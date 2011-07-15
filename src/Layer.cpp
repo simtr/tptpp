@@ -1,7 +1,18 @@
 #inlcude "Layer.hpp"
-Layer::Layer()
+Layer::Layer(int resX,int resY,int scaleFactor)
 {
-	MaxParts = 612*384;
+	ResX=resX;
+	ResY=resY;
+	ScaleFactor=scaleFactor;
+	MaxParts = resX*resY;
+	PartTable = new int[resX][resY];
 	for(int i = 0; i <MaxParts;i++)
 	Parts[i].Index=i;
 }
+Layer::~Layer(){
+for(int i = 0; i < ResX;i++){
+	delete[] PartTable[i];
+	delete Parts;
+	}
+	
+	}
