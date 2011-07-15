@@ -42,7 +42,7 @@
     <LibraryPath>..\..\..\extlibs\msvcc-static-win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>..\..\..\extinclude;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\extinclude;C:\Users\Matthew\tptpp\includes;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>..\..\..\extlibs\msvcc-static-win32;$(LibraryPath)</LibraryPath>
@@ -78,6 +78,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\..\src\main.cpp" />
+    <ClCompile Include="..\..\..\src\Sandbox.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\includes\Sandbox.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

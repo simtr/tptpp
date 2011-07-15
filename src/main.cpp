@@ -1,13 +1,26 @@
 #include <SFML/Graphics.hpp>
 #include <string>
+#include <sstream> 
 using namespace std;
 
 int main(int argc, char** argv){
 	// Create the main window
-	sf::RenderWindow App(sf::VideoMode(800, 600, 32), "SFML Window thingy");
+	sf::RenderWindow App(sf::VideoMode(800, 600, 32), "The Powder Toy: Project C++");
 	// Start game loop
 	while (App.IsOpened()){ 
+		static bool init = false; 
+		static sf::Clock clock; 
+		float getfps;
 		// Process events
+		if(init == false) 
+		{ 
+			 init = true; 
+			 clock.Reset();
+		} 
+		if(App.GetFrameTime()>0){
+			getfps=60/(App.GetFrameTime());
+		}
+
 		sf::Event Event;
 		while (App.PollEvent(Event)){
 			// Close window : exit
@@ -42,6 +55,17 @@ int main(int argc, char** argv){
 		Text.Move(textX,textY);
 
 		App.Draw(Text);
+
+		if(App.GetFrameTime()>0){
+			if(clock.GetElapsedTime() >= 1.0) 
+			{ 
+				clock.Reset(); 
+				stringstream ss; 
+				ss << getfps; 
+				sf::Text dfps("FPS: " + (ss.str()).substr(0,2));
+				App.Draw(dfps); 
+			}  
+		}
 
 		//Draw everything
 		App.Display();
