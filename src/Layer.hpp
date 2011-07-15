@@ -3,7 +3,8 @@
 class Layer{
 	public:
 	const int MaxParts;
-	Particle parts[MaxParts];
+	int PartTable[612][384];
+	Particle Parts[MaxParts];
 	Layer(){}
 	
 	
