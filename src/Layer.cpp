@@ -9,8 +9,10 @@ Layer::Layer(int resX,int resY,int scaleFactor)
 	for(int i = 0; i<ResX;i++)
 		PartTable[i] = new int[ResY];
 	Parts = new Particle[MaxParts];
-	for(int i = 0; i <MaxParts;i++)
+	for(int i = 0; i <MaxParts;i++){
 	Parts[i].Index=i;
+	Parts[i].LayerIndex=Index;
+		}
 }
 Layer::~Layer(){
 for(int i = 0; i < ResX;i++){

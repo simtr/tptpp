@@ -4,6 +4,7 @@
 #include "Particles/Particle.hpp"
 class Layer{
 	public:
+	int Index;
 	int ResX,ResY,ScaleFactor;
 	int MaxParts;
 	int** PartTable;
