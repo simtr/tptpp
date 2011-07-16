@@ -12,7 +12,9 @@ Focused(false),
 Parent(NULL),
 focusedChild(NULL),
 mouseOverChild(NULL),
-mousePressedChild(NULL)
+mousePressedChild(NULL),
+Enabled(true),
+Visible(true)
 {
 	Surface.Create(Width, Height);
 	Repaint();
@@ -35,18 +37,21 @@ void Component::Repaint()
 
 void Component::OnChildUpdate(Component *child)
 {
-	sf::Sprite tempSprite(child->Surface.GetImage());
-	tempSprite.SetPosition((float)child->X, (float)child->Y);
-	Surface.Draw(tempSprite);
-	if(Parent)
+	if(child->Visible)
 	{
-		Parent->OnChildUpdate(this);
+		sf::Sprite tempSprite(child->Surface.GetImage());
+		tempSprite.SetPosition((float)child->X, (float)child->Y);
+		Surface.Draw(tempSprite);
+		if(Parent)
+		{
+			Parent->OnChildUpdate(this);
+		}
 	}
 }
 
 void Component::Tick(float dt)
 {
-	for(int i = 0; Children.size(); i++)
+	for(int i = 0; i < Children.size(); i++)
 	{
 		if(Children[i] && Children[i]->Enabled && Children[i]->Visible)
 		{
@@ -77,6 +82,7 @@ void Component::OnMouseEnter(int localx, int localy)
 	if(Component* child = GetChildAtPosition(localx, localy))
 	{
 		child->OnMouseEnter(localx-child->X, localy-child->Y);
+		mouseOverChild = child;
 	}
 }
 
@@ -88,13 +94,13 @@ void Component::OnMouseLeave(int localx, int localy)
 		child->OnMouseLeave(localx-child->X, localy-child->Y);
 	}
 	// Mouse Leave event for any children that are still active
-	if(mouseOverChild && mouseOverChild->mouseOver && !(mouseOverChild->X < localx && mouseOverChild->Y < Y && mouseOverChild->Width+mouseOverChild->X > localx && mouseOverChild->Height+mouseOverChild->Y > localy))
+	if(mouseOverChild && mouseOverChild->mouseOver && !(mouseOverChild->X < localx && mouseOverChild->Y < localy && mouseOverChild->Width+mouseOverChild->X > localx && mouseOverChild->Height+mouseOverChild->Y > localy))
 	{
 		mouseOverChild->OnMouseLeave(localx-mouseOverChild->X, localy-mouseOverChild->Y);
 		mouseOverChild = NULL;
 	}
 	// Mouse release for any children still pressed
-	if(mousePressedChild && mousePressedChild->mousePressed && !(mousePressedChild->X < localx && mousePressedChild->Y < Y && mousePressedChild->Width+mousePressedChild->X > localx && mousePressedChild->Height+mousePressedChild->Y > localy))
+	if(mousePressedChild && mousePressedChild->mousePressed && !(mousePressedChild->X < localx && mousePressedChild->Y < localy && mousePressedChild->Width+mousePressedChild->X > localx && mousePressedChild->Height+mousePressedChild->Y > localy))
 	{
 		mousePressedChild->OnMouseUp(localx-mousePressedChild->X, localy-mousePressedChild->Y, mousePressedChildButton);
 		mousePressedChild = NULL;
@@ -123,17 +129,18 @@ void Component::OnMouseMoved(int localx, int localy, int dx, int dy)
 		if(!child->mouseOver)
 		{
 			child->OnMouseEnter(localx-child->X, localy-child->Y);
+			mouseOverChild = child;
 		}
 		child->OnMouseMoved(localx-child->X, localy-child->Y, dx, dy);
 	}
 	// Mouse Leave event for any children that are still active
-	if(mouseOverChild && mouseOverChild->mouseOver && !(mouseOverChild->X < localx && mouseOverChild->Y < Y && mouseOverChild->Width+mouseOverChild->X > localx && mouseOverChild->Height+mouseOverChild->Y > localy))
+	if(mouseOverChild && mouseOverChild->mouseOver && !(mouseOverChild->X < localx && mouseOverChild->Y < localy && mouseOverChild->Width+mouseOverChild->X > localx && mouseOverChild->Height+mouseOverChild->Y > localy))
 	{
 		mouseOverChild->OnMouseLeave(localx-mouseOverChild->X, localy-mouseOverChild->Y);
 		mouseOverChild = NULL;
 	}
 	// Mouse release for any children still pressed
-	if(mousePressedChild && mousePressedChild->mousePressed && !(mousePressedChild->X < localx && mousePressedChild->Y < Y && mousePressedChild->Width+mousePressedChild->X > localx && mousePressedChild->Height+mousePressedChild->Y > localy))
+	if(mousePressedChild && mousePressedChild->mousePressed && !(mousePressedChild->X < localx && mousePressedChild->Y < localy && mousePressedChild->Width+mousePressedChild->X > localx && mousePressedChild->Height+mousePressedChild->Y > localy))
 	{
 		mousePressedChild->OnMouseUp(localx-mousePressedChild->X, localy-mousePressedChild->Y, mousePressedChildButton);
 		mousePressedChild = NULL;
@@ -160,10 +167,10 @@ void Component::OnMouseWheel(int localx, int localy, int d)
 
 Component* Component::GetChildAtPosition(int x, int y)
 {
-	for(int i = 0; Children.size(); i++)
+	for(int i = 0; i < Children.size(); i++)
 	{
 		if(Children[i] && Children[i]->Enabled && Children[i]->Visible &&
-			Children[i]->X < x &&Children[i]->Y < Y &&
+			Children[i]->X < x && Children[i]->Y < y &&
 			Children[i]->Width+Children[i]->X > x && Children[i]->Height+Children[i]->Y > y)
 		{
 			return Children[i];
