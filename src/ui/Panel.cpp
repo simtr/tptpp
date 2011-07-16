@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#include "ui/Panel.hpp"
+#include "../../includes/ui/Panel.hpp"
 #include <iostream>
 
 using namespace ui;

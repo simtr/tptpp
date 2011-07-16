@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
-#include "ui/Component.hpp"
-#include "ui/Panel.hpp"
+#include "../includes/ui/Component.hpp"
+#include "../includes/ui/Panel.hpp"
 #include <string>
 #include "Layer.hpp"
 using namespace std;
@@ -15,7 +15,7 @@ int main(int argc, char** argv){
 	sf::Sprite mainPanelSprite(mainPanel.Surface.GetImage());
 	// Other UI Components
 	// Start game loop
-	while (window.IsOpened()){ 
+	while (window.IsOpened()){
 		// Process events
 		sf::Event Event;
 		while (window.PollEvent(Event)){
@@ -26,9 +26,9 @@ int main(int argc, char** argv){
 			if ((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Keyboard::Escape))
 				window.Close();
 		}
-		
+
 		window.Draw(mainPanelSprite);
-		
+
 		// Display current buffer
 		window.Display();
 	}

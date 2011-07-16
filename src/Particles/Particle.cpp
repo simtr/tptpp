@@ -1,6 +1,6 @@
 #include "Particle.hpp"
 template<class T> void Particle::ChangeType(){
-	changeType<T>(this);	
+	changeType<T>(this);
 }
 template<class T> void Particle::changeType(Particle* p){
 	delete this;
@@ -11,4 +11,3 @@ void Particle::SetPos(int x, int y, int** partTable){
 	X=x;
 	Y=y;
 	}
-Particle::Particle(){}

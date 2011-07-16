@@ -10,8 +10,8 @@ class Layer{
 	Particle* Parts;
 	Layer(int,int,int);
 	~Layer();
-	
-	
-	
+
+
+
 };
 #endif

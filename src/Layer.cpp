@@ -16,6 +16,6 @@ Layer::~Layer(){
 for(int i = 0; i < ResX;i++){
 	delete[] PartTable[i];}
 	delete Parts;
-	
-	
+
+
 	}
