@@ -11,6 +11,7 @@ namespace ui
 		Component(int x, int y, int width, int height);
 		~Component();
 
+		bool Focused;
 		bool Visible;
 		bool Enabled;
 		int Width;
@@ -29,10 +30,11 @@ namespace ui
 		virtual void OnMouseUp(int x, int y, unsigned int button);
 		virtual void OnMouseWheel(int localx, int localy, int d);
 		virtual void OnKeyPress(int key, bool shift, bool ctrl, bool alt);
-		virtual void OnKeyUnpress(int key, bool shift, bool ctrl, bool alt);
+		virtual void OnKeyRelease(int key, bool shift, bool ctrl, bool alt);
 		
 		virtual void ChildUpdate(Component *child);
 		Component* GetChildAtPosition(int x, int y);
+		void Defocus();
 
 		virtual void Add(Component *child);
 
@@ -43,7 +45,12 @@ namespace ui
 		virtual void Repaint();
 		
 	protected:
+		bool mouseOver;
+		bool mousePressed;
 		Component* focusedChild;
+		Component* mouseOverChild;
+		Component* mousePressedChild;
+		unsigned int mousePressedChildButton;
 		std::vector<Component*> Children;
 	};
 }
