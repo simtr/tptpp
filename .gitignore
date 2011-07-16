@@ -2,6 +2,7 @@
 *.suo
 *.sdf
 *.user
+*.o
 
 ## Crap added by VS
 build/intdir
