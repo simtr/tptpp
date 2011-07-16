@@ -56,6 +56,7 @@ int main(int argc, char** argv){
 				mainPanel.OnMouseMoved(Event.MouseMove.X, Event.MouseMove.Y, 0, 0);
 			}
 		}
+		window.Clear();
 
 		window.Draw(mainPanelSprite);
 
