@@ -1,4 +1,4 @@
-#include "../../includes/ui/Component.hpp"
+#include "Component.hpp"
 #include <iostream>
 
 using namespace ui;
