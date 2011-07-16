@@ -26,7 +26,7 @@ void Button::Repaint()
 	//Tell the parent that we've changed
 	if(Parent)
 	{
-		Parent->ChildUpdate(this);
+		Parent->OnChildUpdate(this);
 	}
 }
 

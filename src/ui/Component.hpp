@@ -32,7 +32,7 @@ namespace ui
 		virtual void OnKeyPress(int key, bool shift, bool ctrl, bool alt);
 		virtual void OnKeyRelease(int key, bool shift, bool ctrl, bool alt);
 		
-		virtual void ChildUpdate(Component *child);
+		virtual void OnChildUpdate(Component *child);
 		Component* GetChildAtPosition(int x, int y);
 		void Defocus();
 

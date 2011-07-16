@@ -29,18 +29,18 @@ void Component::Repaint()
 	Surface.Display();
 	if(Parent)
 	{
-		Parent->ChildUpdate(this);
+		Parent->OnChildUpdate(this);
 	}
 }
 
-void Component::ChildUpdate(Component *child)
+void Component::OnChildUpdate(Component *child)
 {
 	sf::Sprite tempSprite(child->Surface.GetImage());
 	tempSprite.SetPosition((float)child->X, (float)child->Y);
 	Surface.Draw(tempSprite);
 	if(Parent)
 	{
-		Parent->ChildUpdate(this);
+		Parent->OnChildUpdate(this);
 	}
 }
 
@@ -186,7 +186,7 @@ void Component::SetPosition(int x, int y)
 	Y = y;
 	if(Parent)
 	{
-		Parent->ChildUpdate(this);
+		Parent->OnChildUpdate(this);
 	}
 }
 
