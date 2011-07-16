@@ -1,4 +1,4 @@
-#inlcude "Layer.hpp"
+#include "Layer.hpp"
 Layer::Layer(int resX,int resY,int scaleFactor)
 {
 	ResX=resX;

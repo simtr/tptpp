@@ -15,6 +15,8 @@
     </Filter>
     <Filter Include="Source Files\Particle">
       <UniqueIdentifier>{acd8d82a-55bb-419b-9f38-bae0bad26e7d}</UniqueIdentifier>
+      <Extensions>
+      </Extensions>
     </Filter>
     <Filter Include="Header Files\Particle">
       <UniqueIdentifier>{dd06cd3e-e492-43ad-ab86-e80ef04ab816}</UniqueIdentifier>
@@ -39,6 +41,12 @@
     <ClCompile Include="..\..\..\src\ui\Panel.cpp">
       <Filter>Source Files\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\Particles\Particle.cpp">
+      <Filter>Source Files\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\includes\Sandbox.hpp">
@@ -49,6 +57,12 @@
     </ClInclude>
     <ClInclude Include="..\..\..\includes\ui\Panel.hpp">
       <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Particles\Particle.hpp">
+      <Filter>Header Files\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\src\Layer.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
