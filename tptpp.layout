@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-	<ActiveTarget name="Debug" />
-	<File name="src/Layer.cpp" open="1" top="1" tabpos="8">
+	<ActiveTarget name="Release" />
+	<File name="src/Layer.cpp" open="1" top="0" tabpos="8">
 		<Cursor position="317" topLine="3" />
 	</File>
 	<File name="src/Layer.hpp" open="1" top="0" tabpos="7">
@@ -19,8 +19,8 @@
 	<File name="src/main.cpp" open="1" top="0" tabpos="2">
 		<Cursor position="91" topLine="0" />
 	</File>
-	<File name="src/ui/Component.cpp" open="1" top="0" tabpos="3">
-		<Cursor position="16" topLine="0" />
+	<File name="src/ui/Component.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="16" topLine="132" />
 	</File>
 	<File name="src/ui/Panel.cpp" open="1" top="0" tabpos="4">
 		<Cursor position="54" topLine="0" />

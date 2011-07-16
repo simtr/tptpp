@@ -115,8 +115,12 @@
 		<Unit filename="src/Sandbox.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/makefile" />
+		<Unit filename="src/ui/Button.cpp" />
+		<Unit filename="src/ui/Button.hpp" />
 		<Unit filename="src/ui/Component.cpp" />
+		<Unit filename="src/ui/Component.hpp" />
 		<Unit filename="src/ui/Panel.cpp" />
+		<Unit filename="src/ui/Panel.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
