@@ -1,5 +1,5 @@
 #include <SFML/Graphics.hpp>
-#inlcude "Particles/Particle.hpp"
+#include "Particles/Particle.hpp"
 class Layer{
 	public:
 	int Resx,ResY,ScaleFactor;
