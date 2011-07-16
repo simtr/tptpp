@@ -32,7 +32,8 @@ namespace ui
 		virtual void OnKeyUnpress(int key, bool shift, bool ctrl, bool alt);
 		
 		virtual void ChildUpdate(Component *child);
-		
+		Component* GetChildAtPosition(int x, int y);
+
 		virtual void Add(Component *child);
 
 		void SetSize(int width, int height);
@@ -42,6 +43,7 @@ namespace ui
 		virtual void Repaint();
 		
 	protected:
+		Component* focusedChild;
 		std::vector<Component*> Children;
 	};
 }
