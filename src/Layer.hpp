@@ -1,14 +1,17 @@
+#ifndef _LAYER_HPP
+#define _LAYER_HPP
 #include <SFML/Graphics.hpp>
-#inlcude "Particles/Particle.hpp"
+#include "Particles/Particle.hpp"
 class Layer{
 	public:
-	int Resx,ResY,ScaleFactor;
-	const int MaxParts;
+	int ResX,ResY,ScaleFactor;
+	int MaxParts;
 	int** PartTable;
-	Particle Parts[MaxParts];
-	Layer(int,int,int){}
-	~Layer(){}
+	Particle* Parts;
+	Layer(int,int,int);
+	~Layer();
 	
 	
 	
 };
+#endif

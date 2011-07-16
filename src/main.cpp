@@ -1,7 +1,8 @@
 #include <SFML/Graphics.hpp>
-#include <ui/Component.hpp>
-#include <ui/Panel.hpp>
+#include "ui/Component.hpp"
+#include "ui/Panel.hpp"
 #include <string>
+#include "Layer.hpp"
 using namespace std;
 
 int main(int argc, char** argv){
