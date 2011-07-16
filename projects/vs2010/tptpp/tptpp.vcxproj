@@ -10,6 +10,21 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\src\Layer.cpp" />
+    <ClCompile Include="..\..\..\src\main.cpp" />
+    <ClCompile Include="..\..\..\src\Particles\Particle.cpp" />
+    <ClCompile Include="..\..\..\src\Sandbox.cpp" />
+    <ClCompile Include="..\..\..\src\ui\Component.cpp" />
+    <ClCompile Include="..\..\..\src\ui\Panel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\includes\Sandbox.hpp" />
+    <ClInclude Include="..\..\..\includes\ui\Component.hpp" />
+    <ClInclude Include="..\..\..\includes\ui\Panel.hpp" />
+    <ClInclude Include="..\..\..\src\Layer.hpp" />
+    <ClInclude Include="..\..\..\src\Particles\Particle.hpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B9677DBB-37AF-4F35-BC7A-C4697454D12F}</ProjectGuid>
     <RootNamespace>tptpp</RootNamespace>
@@ -38,15 +53,16 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>..\..\..\build\</OutDir>
-    <IncludePath>..\..\..\extinclude;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\extinclude;..\..\..\includes;;$(IncludePath)</IncludePath>
     <LibraryPath>..\..\..\extlibs\msvcc-static-win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>..\..\..\extinclude;$(IncludePath)</IncludePath>
+    <IncludePath>..\..\..\extinclude;..\..\..\includes;$(IncludePath);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LibraryPath>..\..\..\extlibs\msvcc-static-win32;$(LibraryPath)</LibraryPath>
     <OutDir>..\..\..\build\</OutDir>
+    <IntDir>$(OutDir)intdir\$(Configuration)\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -76,9 +92,6 @@
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\src\main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
