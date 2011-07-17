@@ -108,10 +108,19 @@
 		<Unit filename="includes/Sandbox.hpp" />
 		<Unit filename="includes/ui/Component.hpp" />
 		<Unit filename="includes/ui/Panel.hpp" />
+		<Unit filename="src/GlobalDefines.hpp" />
+		<Unit filename="src/GlobalFunctions.cpp" />
+		<Unit filename="src/GlobalFunctions.hpp" />
 		<Unit filename="src/Layer.cpp" />
 		<Unit filename="src/Layer.hpp" />
+		<Unit filename="src/ParticleRenderer.cpp" />
+		<Unit filename="src/ParticleRenderer.hpp" />
+		<Unit filename="src/Particles/Metl.cpp" />
+		<Unit filename="src/Particles/Metl.hpp" />
 		<Unit filename="src/Particles/Particle.cpp" />
-		<Unit filename="src/Particles/Particle.hpp" />
+		<Unit filename="src/Particles/Particle.hpp">
+			<Option weight="0" />
+		</Unit>
 		<Unit filename="src/Sandbox.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/makefile" />
@@ -121,6 +130,8 @@
 		<Unit filename="src/ui/Component.hpp" />
 		<Unit filename="src/ui/Panel.cpp" />
 		<Unit filename="src/ui/Panel.hpp" />
+		<Unit filename="src/ui/SimulationView.cpp" />
+		<Unit filename="src/ui/SimulationView.hpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
