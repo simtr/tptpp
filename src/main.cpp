@@ -1,67 +1,106 @@
 #include <SFML/Graphics.hpp>
-#include "ui/Component.hpp"
-#include "ui/Panel.hpp"
-#include "ui/Button.hpp"
+#include <SFML/System.hpp>
+#include <ui/Component.hpp>
+#include <ui/Panel.hpp>
+#include <ui/Button.hpp>
+#include <ui/State.hpp>
+#include <Sandbox.hpp>
+#include <Layer.hpp>
+
+#include <iostream>
 #include <string>
-#include "Layer.hpp"
+
 using namespace std;
 
 int main(int argc, char** argv){
 	int windowWidth = 800;
 	int windowHeight = 600;
+
 	// Create the main window
 	sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight, 32), "The Powder Toy");
-	// Create main panel
-	ui::Panel mainPanel(0, 0, windowWidth, windowHeight);
-	sf::Sprite mainPanelSprite(mainPanel.Surface.GetImage());
+
+    // Create instance of game
+    sim::Sandbox sandboxGame(windowWidth, windowHeight, 4);
+
 	// Other UI Components
 	ui::Button testButton(20, 20, 60, 60, "ButtonTest");
-	mainPanel.Add(&testButton);
+	sandboxGame.Add(&testButton);
+
+    float TICKRATE = 1000.f/60.f;
+    double TickTime = 0;
+
+    sf::Clock clk;
 	// Start game loop
-	while (window.IsOpened()){
-		// Process events
-		sf::Event Event;
-		while (window.PollEvent(Event)){
-			// Close window : exit
-			if (Event.Type == sf::Event::Closed)
-				window.Close();
-			// Escape key : exit
-			if ((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Keyboard::Escape))
-				window.Close();
-			// Mouse events
-			if (Event.Type == sf::Event::MouseButtonPressed || Event.Type == sf::Event::MouseButtonReleased)
-			{
-				int buttonCode = 0;
-				switch(Event.MouseButton.Button)
-				{
-				case sf::Mouse::Left:
-					buttonCode = 1;
-					break;
-				case sf::Mouse::Right:
-					buttonCode = 4;
-					break;
-				case sf::Mouse::Middle:
-					buttonCode = 2;
-					break;
-				default:
-					buttonCode = 0;
-				}
-				if(Event.Type == sf::Event::MouseButtonPressed)
-					mainPanel.OnMouseDown(Event.MouseButton.X, Event.MouseButton.Y, buttonCode);
-				else
-					mainPanel.OnMouseUp(Event.MouseButton.X, Event.MouseButton.Y, buttonCode);
-			}
-			if(Event.Type == sf::Event::MouseMoved)
-			{
-				mainPanel.OnMouseMoved(Event.MouseMove.X, Event.MouseMove.Y, 0, 0);
-			}
+	while (window.IsOpened())
+	{
+	    TickTime += clk.GetElapsedTime();
+	    clk.Reset();
+
+		//Tick loop
+		while(TickTime > TICKRATE)
+		{
+		    TickTime -= TICKRATE;
+
+		    // Process events
+            sf::Event Event;
+            while (window.PollEvent(Event))
+            {
+                if(Event.Type == sf::Event::Closed) // Close window : exit
+                {
+                    window.Close();
+                }
+                else if(Event.Type == sf::Event::KeyPressed)
+                {
+                    if(Event.Key.Code == sf::Keyboard::Escape) // Escape key : exit
+                        window.Close();
+                }
+                else if(Event.Type == sf::Event::MouseButtonPressed)
+                {
+                    int buttonCode = 0;
+                    switch(Event.MouseButton.Button)
+                    {
+                    case sf::Mouse::Left:
+                        buttonCode = 1;
+                        break;
+                    case sf::Mouse::Right:
+                        buttonCode = 3;
+                        break;
+                    case sf::Mouse::Middle:
+                        buttonCode = 2;
+                        break;
+                    }
+                    sandboxGame.OnMouseDown(Event.MouseButton.X, Event.MouseButton.Y, buttonCode);
+                }
+                else if(Event.Type == sf::Event::MouseButtonReleased)
+                {
+                    int buttonCode = 0;
+                    switch(Event.MouseButton.Button)
+                    {
+                    case sf::Mouse::Left:
+                        buttonCode = 1;
+                        break;
+                    case sf::Mouse::Right:
+                        buttonCode = 3;
+                        break;
+                    case sf::Mouse::Middle:
+                        buttonCode = 2;
+                        break;
+                    }
+                    sandboxGame.OnMouseUp(Event.MouseButton.X, Event.MouseButton.Y, buttonCode);
+                }
+                else if(Event.Type == sf::Event::MouseMoved)
+                {
+                    sandboxGame.OnMouseMove(Event.MouseMove.X, Event.MouseMove.Y);
+                }
+            }
+
+            sandboxGame.Tick(TICKRATE);
 		}
+
 		window.Clear();
-
-		window.Draw(mainPanelSprite);
-
-		// Display current buffer
+		sandboxGame.Draw(&window);
 		window.Display();
 	}
-return EXIT_SUCCESS;
+
+    return EXIT_SUCCESS;
 }

@@ -1,67 +1,95 @@
 #include <SFML/Graphics.hpp>
-#include "Button.hpp"
+#include <ui/Button.hpp>
 #include <iostream>
 #include <string>
 
 using namespace ui;
 
-Button::Button(int x, int y, int width, int height, const std::string& buttonText):
-Component(x, y, width, height),
-ButtonText(buttonText)
+Button::Button(int x, int y, int width, int height, const std::string& buttonText) : Component(x, y, width, height),
+Toggleable(false),
+ButtonText(buttonText),
+isMouseInside(false),
+isButtonDown(false),
+state(false)
 {
-	Repaint();
 }
 
-void Button::Repaint()
+void Button::Draw(void* userdata)
 {
+    sf::RenderWindow* rw = reinterpret_cast<sf::RenderWindow*>(userdata); //it better be a RenderWindow or so help your god
+
 	//Draw component here
 	sf::Text textGraphic(ButtonText);
 	textGraphic.SetCharacterSize(11);
 	textGraphic.SetColor(sf::Color::White);
+    textGraphic.SetPosition(X + 4, X + 4);
 
-	if(mouseOver)
+	if(isMouseInside)
 	{
-		Surface.Draw(sf::Shape::Rectangle(2.0f, 2.0f, (float)(Width-4), (float)(Height-4), sf::Color::Black, 2.0f, sf::Color::White));
-	} else {
-		Surface.Draw(sf::Shape::Rectangle(1.0f, 1.0f, (float)(Width-2), (float)(Height-2), sf::Color::Black, 1.0f, sf::Color::White));
+	    if(isButtonDown)
+            rw->Draw(sf::Shape::Rectangle(X+1, Y+1, Width-2, Width-2, sf::Color::Black, 1.f, sf::Color::Cyan));
+        else
+            rw->Draw(sf::Shape::Rectangle(X+1, Y+1, Width-2, Width-2, sf::Color::Black, 2.f, sf::Color::White));
 	}
-	Surface.Draw(textGraphic);//Doesn't work? It seems the rectangle is always drawn on top...
-
-	Surface.Display();
-	//Tell the parent that we've changed
-	if(Parent)
+	else
 	{
-		Parent->OnChildUpdate(this);
+	    if(isButtonDown)
+            rw->Draw(sf::Shape::Rectangle(X+2, Y+2, Width-4, Width-4, sf::Color::Black, 1.f, sf::Color::Cyan));
+        else
+            rw->Draw(sf::Shape::Rectangle(X+2, Y+2, Width-4, Width-4, sf::Color::Black, 2.f, sf::Color::White));
 	}
+
+	rw->Draw(textGraphic); //Doesn't work? It seems the rectangle is always drawn on top...
 }
 
-void Button::OnMouseUp(int x, int y, unsigned int button)
+void Button::OnMouseUnclick(int x, int y, unsigned int button)
 {
-	mousePressed = false;
-	//Do action
-	Repaint();
+    if(button != 1) return; //left click only!
+
+	if(isButtonDown)
+	{
+	    if(state)
+        {
+            state = false;
+        }
+        else
+        {
+            if(Toggleable)
+            {
+                state = true;
+            }
+            DoAction();
+        }
+	}
+
+	isButtonDown = false;
 }
 
-void Button::OnMouseDown(int x, int y, unsigned int button)
+void Button::OnMouseUp(int x, int y, unsigned int button) //mouse unclick is called before this
 {
-	mousePressed = true;
-	Repaint();
+    if(button != 1) return; //left click only!
+
+	isButtonDown = false;
 }
 
-void Button::OnMouseEnter(int x, int y)
+void Button::OnMouseClick(int x, int y, unsigned int button)
 {
-	mouseOver = true;
-	Repaint();
+    if(button != 1) return; //left click only!
+
+	isButtonDown = true;
 }
 
-void Button::OnMouseLeave(int x, int y)
+void Button::OnMouseEnter(int x, int y, int dx, int dy)
 {
-	mouseOver = false;
-	Repaint();
+    isMouseInside = true;
 }
 
-
-void Button::SetAction()
+void Button::OnMouseLeave(int x, int y, int dx, int dy)
 {
-	//Set the action of the button
+	isMouseInside = false;
+}
+
+void Button::DoAction()
+{
+    std::cout << "\nDo action!";
 }
