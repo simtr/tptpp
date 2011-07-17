@@ -10,6 +10,13 @@
 #include <iostream>
 #include <string>
 
+#include "ui/Component.hpp"
+#include "ui/Panel.hpp"
+#include "ui/Button.hpp"
+#include "ui/SimulationView.hpp"
+#include <string>
+#include "Layer.hpp"
+#include "GlobalFunctions.hpp"
 using namespace std;
 
 int main(int argc, char** argv){

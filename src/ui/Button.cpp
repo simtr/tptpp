@@ -39,7 +39,7 @@ void Button::Draw(void* userdata)
             rw->Draw(sf::Shape::Rectangle(X+2, Y+2, Width-4, Width-4, sf::Color::Black, 2.f, sf::Color::White));
 	}
 
-	rw->Draw(textGraphic); //Doesn't work? It seems the rectangle is always drawn on top...
+	rw->Draw(textGraphic);
 }
 
 void Button::OnMouseUnclick(int x, int y, unsigned int button)

@@ -4,43 +4,7 @@
 	<File name="includes\Layer.hpp" open="0" top="0" tabpos="0">
 		<Cursor position="103" topLine="0" />
 	</File>
-	<File name="includes\Sandbox.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="97" topLine="0" />
-	</File>
-	<File name="includes\ui\Button.hpp" open="1" top="0" tabpos="3">
-		<Cursor position="632" topLine="0" />
-	</File>
-	<File name="includes\ui\Component.hpp" open="1" top="0" tabpos="4">
-		<Cursor position="759" topLine="9" />
-	</File>
-	<File name="includes\ui\Panel.hpp" open="1" top="0" tabpos="9">
-		<Cursor position="282" topLine="0" />
-	</File>
-	<File name="includes\ui\State.hpp" open="1" top="0" tabpos="6">
-		<Cursor position="1209" topLine="20" />
-	</File>
-	<File name="src\Layer.cpp" open="0" top="0" tabpos="8">
-		<Cursor position="10" topLine="0" />
-	</File>
-	<File name="src\Particles\Particle.cpp" open="0" top="0" tabpos="5">
-		<Cursor position="351" topLine="0" />
-	</File>
-	<File name="src\Sandbox.cpp" open="0" top="0" tabpos="4">
-		<Cursor position="73" topLine="0" />
-	</File>
-	<File name="src\main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="2486" topLine="62" />
-	</File>
-	<File name="src\ui\Button.cpp" open="1" top="1" tabpos="2">
-		<Cursor position="349" topLine="0" />
-	</File>
-	<File name="src\ui\Component.cpp" open="1" top="0" tabpos="5">
-		<Cursor position="253" topLine="15" />
-	</File>
-	<File name="src\ui\Panel.cpp" open="1" top="0" tabpos="8">
-		<Cursor position="43" topLine="0" />
-	</File>
-	<File name="src\ui\State.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="3791" topLine="129" />
+	<File name="src\Particles\Particle.cpp" open="1" top="1" tabpos="0">
+		<Cursor position="494" topLine="0" />
 	</File>
 </CodeBlocks_layout_file>
