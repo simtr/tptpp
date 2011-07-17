@@ -116,8 +116,11 @@
 		<Unit filename="includes\ui\Component.hpp" />
 		<Unit filename="includes\ui\Panel.hpp" />
 		<Unit filename="includes\ui\State.hpp" />
-		<Unit filename="includes\ui\GlobalFunctions.hpp" />
-		<Unit filename="includes\ui\ParticleRenderer.hpp" />
+		<Unit filename="includes\GlobalFunctions.hpp" />
+		<Unit filename="includes\ParticleRenderer.hpp" />
+		<Unit filename="includes\GlobalDefines.hpp" />
+		<Unit filename="includes\Particles\Metl.hpp" />
+		<Unit filename="src\Particles\Metl.cpp" />
 		<Unit filename="src\Layer.cpp" />
 		<Unit filename="src\ParticleRenderer.cpp" />
 		<Unit filename="src\GlobalFunctions.cpp" />
