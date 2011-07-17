@@ -5,6 +5,8 @@
 #include "ui/SimulationView.hpp"
 #include <string>
 #include "Layer.hpp"
+#include "Particles/Particle.hpp"
+#include "GlobalDefines.hpp"
 #include "GlobalFunctions.hpp"
 using namespace std;
 
