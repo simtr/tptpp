@@ -1,8 +1,6 @@
 #ifndef _PARTICLE_CPP
 #define _PARTICLE_CPP
-#include "Particle.hpp"
-
-
+#include <Particles/Particle.hpp>
 void Particle::SetPos(int x, int y, int** partTable){
 	partTable[X][Y]=0;
 	partTable[x][y]=Index;

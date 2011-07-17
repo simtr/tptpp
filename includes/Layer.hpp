@@ -1,7 +1,7 @@
 #ifndef _LAYER_HPP
 #define _LAYER_HPP
 #include <SFML/Graphics.hpp>
-#include "Particles/Particle.hpp"
+#include <Particles/Particle.hpp>
 class Layer{
 public:
 	int Index;

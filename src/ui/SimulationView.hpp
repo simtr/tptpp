@@ -1,13 +1,13 @@
 #ifndef UI_SIMULATIONVIEW_HPP
 #define UI_SIMULATIONVIEW_HPP
 #include <SFML/Graphics.hpp>
-#include "Component.hpp"
-#include "../Layer.hpp"
-#include "../ParticleRenderer.hpp"
+#include <ui/Component.hpp>
+#include <Layer.hpp>
+#include <ParticleRenderer.hpp>
 #include <string>
 
 namespace ui
-{	
+{
 	class SimulationView : public Component
 	{
 	public:

@@ -4,13 +4,13 @@
 #include "Component.hpp"
 
 namespace ui
-{	
+{
 	class Panel : public Component
 	{
 	public:
 		Panel(int x, int y, int width, int height);
 		virtual void Add(Component *child);
-		virtual void Repaint();
+		virtual void Draw();
 	};
 }
 

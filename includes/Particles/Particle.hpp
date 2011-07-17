@@ -19,5 +19,4 @@ template<class T> void changeType(Particle* p, int type){
 	p->Type = type;
 }
 };
-#include "Metl.hpp"
 #endif

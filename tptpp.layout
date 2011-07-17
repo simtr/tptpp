@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
+<<<<<<< HEAD
 	<ActiveTarget name="Debug" />
 	<File name="src/GlobalFunctions.cpp" open="1" top="0" tabpos="6">
 		<Cursor position="254" topLine="2" />
@@ -33,5 +34,19 @@
 	</File>
 	<File name="src/ui/Panel.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="54" topLine="0" />
+=======
+	<ActiveTarget name="Release" />
+	<File name="includes\Layer.hpp" open="0" top="0" tabpos="0">
+		<Cursor position="103" topLine="0" />
+	</File>
+	<File name="includes\Particles\Particle.hpp" open="1" top="0" tabpos="2">
+		<Cursor position="359" topLine="0" />
+	</File>
+	<File name="src\Particles\Particle.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="309" topLine="0" />
+	</File>
+	<File name="src\main.cpp" open="1" top="1" tabpos="3">
+		<Cursor position="2199" topLine="58" />
+>>>>>>> origin/master
 	</File>
 </CodeBlocks_layout_file>

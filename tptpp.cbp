@@ -7,8 +7,8 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/tptpp" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Debug/" />
+				<Option output="bin\Debug\tptpp" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Debug\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -16,8 +16,8 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/tptpp" prefix_auto="1" extension_auto="1" />
-				<Option object_output="obj/Release/" />
+				<Option output="bin\Release\tptpp" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj\Release\" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Compiler>
@@ -30,6 +30,8 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
+			<Add directory="extinclude" />
+			<Add directory="includes" />
 		</Compiler>
 		<Linker>
 			<Add library="sfml-audio" />
@@ -37,8 +39,11 @@
 			<Add library="sfml-network" />
 			<Add library="sfml-system" />
 			<Add library="sfml-window" />
+			<Add directory="extlibs\mingw-shared-win32" />
+			<Add directory="extlibs\msvcc-static-win32" />
 		</Linker>
 		<Unit filename="LICENSE" />
+<<<<<<< HEAD
 		<Unit filename="extinclude/SFML/Audio.hpp" />
 		<Unit filename="extinclude/SFML/Audio/Listener.hpp" />
 		<Unit filename="extinclude/SFML/Audio/Music.hpp" />
@@ -132,6 +137,97 @@
 		<Unit filename="src/ui/Panel.hpp" />
 		<Unit filename="src/ui/SimulationView.cpp" />
 		<Unit filename="src/ui/SimulationView.hpp" />
+=======
+		<Unit filename="extinclude\SFML\Audio.hpp" />
+		<Unit filename="extinclude\SFML\Audio\Listener.hpp" />
+		<Unit filename="extinclude\SFML\Audio\Music.hpp" />
+		<Unit filename="extinclude\SFML\Audio\Sound.hpp" />
+		<Unit filename="extinclude\SFML\Audio\SoundBuffer.hpp" />
+		<Unit filename="extinclude\SFML\Audio\SoundBufferRecorder.hpp" />
+		<Unit filename="extinclude\SFML\Audio\SoundRecorder.hpp" />
+		<Unit filename="extinclude\SFML\Audio\SoundSource.hpp" />
+		<Unit filename="extinclude\SFML\Audio\SoundStream.hpp" />
+		<Unit filename="extinclude\SFML\Config.hpp" />
+		<Unit filename="extinclude\SFML\Graphics.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Color.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Drawable.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Font.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Glyph.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Image.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Matrix3.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Rect.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\RenderImage.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\RenderTarget.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\RenderWindow.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Renderer.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Shader.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Shape.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Sprite.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\Text.hpp" />
+		<Unit filename="extinclude\SFML\Graphics\View.hpp" />
+		<Unit filename="extinclude\SFML\Network.hpp" />
+		<Unit filename="extinclude\SFML\Network\Ftp.hpp" />
+		<Unit filename="extinclude\SFML\Network\Http.hpp" />
+		<Unit filename="extinclude\SFML\Network\IpAddress.hpp" />
+		<Unit filename="extinclude\SFML\Network\Packet.hpp" />
+		<Unit filename="extinclude\SFML\Network\Socket.hpp" />
+		<Unit filename="extinclude\SFML\Network\SocketHandle.hpp" />
+		<Unit filename="extinclude\SFML\Network\SocketSelector.hpp" />
+		<Unit filename="extinclude\SFML\Network\TcpListener.hpp" />
+		<Unit filename="extinclude\SFML\Network\TcpSocket.hpp" />
+		<Unit filename="extinclude\SFML\Network\UdpSocket.hpp" />
+		<Unit filename="extinclude\SFML\OpenGL.hpp" />
+		<Unit filename="extinclude\SFML\System.hpp" />
+		<Unit filename="extinclude\SFML\System\Clock.hpp" />
+		<Unit filename="extinclude\SFML\System\Err.hpp" />
+		<Unit filename="extinclude\SFML\System\Lock.hpp" />
+		<Unit filename="extinclude\SFML\System\Mutex.hpp" />
+		<Unit filename="extinclude\SFML\System\NonCopyable.hpp" />
+		<Unit filename="extinclude\SFML\System\Resource.hpp" />
+		<Unit filename="extinclude\SFML\System\Sleep.hpp" />
+		<Unit filename="extinclude\SFML\System\String.hpp" />
+		<Unit filename="extinclude\SFML\System\Thread.hpp" />
+		<Unit filename="extinclude\SFML\System\ThreadLocal.hpp" />
+		<Unit filename="extinclude\SFML\System\ThreadLocalPtr.hpp" />
+		<Unit filename="extinclude\SFML\System\Utf.hpp" />
+		<Unit filename="extinclude\SFML\System\Vector2.hpp" />
+		<Unit filename="extinclude\SFML\System\Vector3.hpp" />
+		<Unit filename="extinclude\SFML\Window.hpp" />
+		<Unit filename="extinclude\SFML\Window\Context.hpp" />
+		<Unit filename="extinclude\SFML\Window\ContextSettings.hpp" />
+		<Unit filename="extinclude\SFML\Window\Event.hpp" />
+		<Unit filename="extinclude\SFML\Window\GlResource.hpp" />
+		<Unit filename="extinclude\SFML\Window\Joystick.hpp" />
+		<Unit filename="extinclude\SFML\Window\Keyboard.hpp" />
+		<Unit filename="extinclude\SFML\Window\Mouse.hpp" />
+		<Unit filename="extinclude\SFML\Window\VideoMode.hpp" />
+		<Unit filename="extinclude\SFML\Window\Window.hpp" />
+		<Unit filename="extinclude\SFML\Window\WindowHandle.hpp" />
+		<Unit filename="extinclude\SFML\Window\WindowStyle.hpp" />
+		<Unit filename="includes\Layer.hpp" />
+		<Unit filename="includes\Particles\Particle.hpp" />
+		<Unit filename="includes\Sandbox.hpp" />
+		<Unit filename="includes\ui\Button.hpp" />
+		<Unit filename="includes\ui\Component.hpp" />
+		<Unit filename="includes\ui\Panel.hpp" />
+		<Unit filename="includes\ui\State.hpp" />
+		<Unit filename="includes\GlobalFunctions.hpp" />
+		<Unit filename="includes\ParticleRenderer.hpp" />
+		<Unit filename="includes\GlobalDefines.hpp" />
+		<Unit filename="includes\Particles\Metl.hpp" />
+		<Unit filename="src\Particles\Metl.cpp" />
+		<Unit filename="src\Layer.cpp" />
+		<Unit filename="src\ParticleRenderer.cpp" />
+		<Unit filename="src\GlobalFunctions.cpp" />
+		<Unit filename="src\Particles\Particle.cpp" />
+		<Unit filename="src\Sandbox.cpp" />
+		<Unit filename="src\main.cpp" />
+		<Unit filename="src\makefile" />
+		<Unit filename="src\ui\Button.cpp" />
+		<Unit filename="src\ui\Component.cpp" />
+		<Unit filename="src\ui\Panel.cpp" />
+		<Unit filename="src\ui\State.cpp" />
+>>>>>>> origin/master
 		<Extensions>
 			<code_completion />
 			<debugger />
