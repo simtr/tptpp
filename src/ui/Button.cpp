@@ -18,6 +18,8 @@ void Button::Repaint()
 	sf::Text textGraphic(ButtonText);
 	textGraphic.SetCharacterSize(11);
 	textGraphic.SetColor(sf::Color::White);
+	textGraphic.SetBlendMode(sf::Blend::Add);
+	textGraphic.SetPosition(20.0f, 20.0f);
 
 	if(mouseOver)
 	{

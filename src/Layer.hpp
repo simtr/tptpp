@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "Particles/Particle.hpp"
 class Layer{
-	public:
+public:
 	int Index;
 	int ResX,ResY,ScaleFactor;
 	int MaxParts;
@@ -11,8 +11,5 @@ class Layer{
 	Particle* Parts;
 	Layer(int,int,int);
 	~Layer();
-
-
-
 };
 #endif
