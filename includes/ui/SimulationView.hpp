@@ -18,13 +18,14 @@ namespace ui
 		virtual void OnMouseUp(int x, int y, unsigned int button);
 		virtual void OnMouseDown(int x, int y, unsigned int button);
 
-		virtual void OnMouseEnter(int x, int y);
-		virtual void OnMouseLeave(int x, int y);
+		virtual void OnMouseEnter(int x, int y, int dx, int dy);
+		virtual void OnMouseLeave(int x, int y, int dx, int dy);
 
-		virtual void Repaint();
+		virtual void Draw(void* userdata);
 
 		void AttachRenderer(ParticleRenderer *newRenderer);
 		void AttachLayer(Layer *simLayer);
+
 	private:
 		ParticleRenderer *renderer;
 		Layer *simulation;

@@ -1,52 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
-<<<<<<< HEAD
-	<ActiveTarget name="Debug" />
-	<File name="src/GlobalFunctions.cpp" open="1" top="0" tabpos="6">
-		<Cursor position="254" topLine="2" />
+	<ActiveTarget name="Release" />
+	<File name="includes\ParticleRenderer.hpp" open="1" top="0" tabpos="6">
+		<Cursor position="205" topLine="0" />
 	</File>
-	<File name="src/GlobalFunctions.hpp" open="1" top="0" tabpos="2">
-		<Cursor position="93" topLine="0" />
+	<File name="includes\Sandbox.hpp" open="1" top="0" tabpos="7">
+		<Cursor position="0" topLine="0" />
 	</File>
-	<File name="src/Layer.cpp" open="0" top="0" tabpos="8">
+	<File name="includes\ui\SimulationView.hpp" open="1" top="0" tabpos="5">
+		<Cursor position="646" topLine="0" />
+	</File>
+	<File name="src\GlobalFunctions.cpp" open="1" top="0" tabpos="2">
+		<Cursor position="254" topLine="0" />
+	</File>
+	<File name="src\Layer.cpp" open="0" top="0" tabpos="8">
 		<Cursor position="317" topLine="3" />
 	</File>
-	<File name="src/Layer.hpp" open="1" top="0" tabpos="8">
-		<Cursor position="121" topLine="0" />
+	<File name="src\Particles\Particle.cpp" open="1" top="0" tabpos="3">
+		<Cursor position="69" topLine="0" />
 	</File>
-	<File name="src/Particles/Metl.hpp" open="1" top="0" tabpos="4">
-		<Cursor position="54" topLine="0" />
-	</File>
-	<File name="src/Particles/Particle.cpp" open="1" top="0" tabpos="7">
-		<Cursor position="69" topLine="3" />
-	</File>
-	<File name="src/Particles/Particle.hpp" open="1" top="1" tabpos="5">
-		<Cursor position="350" topLine="6" />
-	</File>
-	<File name="src/Sandbox.cpp" open="0" top="0" tabpos="1">
+	<File name="src\Sandbox.cpp" open="0" top="0" tabpos="1">
 		<Cursor position="13" topLine="0" />
 	</File>
-	<File name="src/main.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="197" topLine="0" />
+	<File name="src\main.cpp" open="1" top="1" tabpos="1">
+		<Cursor position="2059" topLine="52" />
 	</File>
-	<File name="src/ui/Component.cpp" open="0" top="0" tabpos="3">
+	<File name="src\ui\Component.cpp" open="0" top="0" tabpos="3">
 		<Cursor position="16" topLine="132" />
 	</File>
-	<File name="src/ui/Panel.cpp" open="0" top="0" tabpos="4">
+	<File name="src\ui\Panel.cpp" open="0" top="0" tabpos="4">
 		<Cursor position="54" topLine="0" />
-=======
-	<ActiveTarget name="Release" />
-	<File name="includes\Layer.hpp" open="0" top="0" tabpos="0">
-		<Cursor position="103" topLine="0" />
 	</File>
-	<File name="includes\Particles\Particle.hpp" open="1" top="0" tabpos="2">
-		<Cursor position="359" topLine="0" />
-	</File>
-	<File name="src\Particles\Particle.cpp" open="1" top="0" tabpos="1">
-		<Cursor position="309" topLine="0" />
-	</File>
-	<File name="src\main.cpp" open="1" top="1" tabpos="3">
-		<Cursor position="2199" topLine="58" />
->>>>>>> origin/master
+	<File name="src\ui\SimulationView.cpp" open="1" top="0" tabpos="4">
+		<Cursor position="929" topLine="26" />
 	</File>
 </CodeBlocks_layout_file>

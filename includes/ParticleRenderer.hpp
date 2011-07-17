@@ -6,6 +6,6 @@
 class ParticleRenderer
 {
 public:
-	virtual void Render(Layer* simLayer, sf::RenderImage *renderTarget);
+	virtual void Render(Layer* simLayer, sf::RenderTarget* rt);
 };
 #endif
