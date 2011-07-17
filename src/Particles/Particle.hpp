@@ -2,6 +2,7 @@ class Particle{
 public:
 	int X,Y,Type,LayerIndex;
 	int Index;
+	Particle(){Type = 0;return;};
 	template<class T>void ChangeType(int);
 	virtual void Logic(){};
 	virtual void MoveLogic(int**);
