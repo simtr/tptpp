@@ -43,7 +43,6 @@
 			<Add directory="extlibs\msvcc-static-win32" />
 		</Linker>
 		<Unit filename="LICENSE" />
-<<<<<<< HEAD
 		<Unit filename="extinclude/SFML/Audio.hpp" />
 		<Unit filename="extinclude/SFML/Audio/Listener.hpp" />
 		<Unit filename="extinclude/SFML/Audio/Music.hpp" />
@@ -137,7 +136,6 @@
 		<Unit filename="src/ui/Panel.hpp" />
 		<Unit filename="src/ui/SimulationView.cpp" />
 		<Unit filename="src/ui/SimulationView.hpp" />
-=======
 		<Unit filename="extinclude\SFML\Audio.hpp" />
 		<Unit filename="extinclude\SFML\Audio\Listener.hpp" />
 		<Unit filename="extinclude\SFML\Audio\Music.hpp" />
