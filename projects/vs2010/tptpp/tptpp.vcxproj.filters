@@ -47,6 +47,24 @@
     <ClCompile Include="..\..\..\src\Layer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\src\GlobalFunctions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\ParticleRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\Particles\Metl.cpp">
+      <Filter>Source Files\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\ui\Button.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\ui\SimulationView.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\src\ui\State.cpp">
+      <Filter>Source Files\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\includes\Sandbox.hpp">
@@ -61,7 +79,28 @@
     <ClInclude Include="..\..\..\src\Particles\Particle.hpp">
       <Filter>Header Files\Particle</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\src\Layer.hpp">
+    <ClInclude Include="..\..\..\includes\ui\Button.hpp">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\ui\SimulationView.hpp">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\ui\State.hpp">
+      <Filter>Header Files\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\Particles\Metl.hpp">
+      <Filter>Header Files\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\GlobalDefines.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\GlobalFunctions.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\Layer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\includes\ParticleRenderer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

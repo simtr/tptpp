@@ -11,18 +11,31 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\src\GlobalFunctions.cpp" />
     <ClCompile Include="..\..\..\src\Layer.cpp" />
     <ClCompile Include="..\..\..\src\main.cpp" />
+    <ClCompile Include="..\..\..\src\ParticleRenderer.cpp" />
+    <ClCompile Include="..\..\..\src\Particles\Metl.cpp" />
     <ClCompile Include="..\..\..\src\Particles\Particle.cpp" />
     <ClCompile Include="..\..\..\src\Sandbox.cpp" />
+    <ClCompile Include="..\..\..\src\ui\Button.cpp" />
     <ClCompile Include="..\..\..\src\ui\Component.cpp" />
     <ClCompile Include="..\..\..\src\ui\Panel.cpp" />
+    <ClCompile Include="..\..\..\src\ui\SimulationView.cpp" />
+    <ClCompile Include="..\..\..\src\ui\State.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\includes\GlobalDefines.hpp" />
+    <ClInclude Include="..\..\..\includes\GlobalFunctions.hpp" />
+    <ClInclude Include="..\..\..\includes\Layer.hpp" />
+    <ClInclude Include="..\..\..\includes\ParticleRenderer.hpp" />
+    <ClInclude Include="..\..\..\includes\Particles\Metl.hpp" />
     <ClInclude Include="..\..\..\includes\Sandbox.hpp" />
+    <ClInclude Include="..\..\..\includes\ui\Button.hpp" />
     <ClInclude Include="..\..\..\includes\ui\Component.hpp" />
     <ClInclude Include="..\..\..\includes\ui\Panel.hpp" />
-    <ClInclude Include="..\..\..\src\Layer.hpp" />
+    <ClInclude Include="..\..\..\includes\ui\SimulationView.hpp" />
+    <ClInclude Include="..\..\..\includes\ui\State.hpp" />
     <ClInclude Include="..\..\..\src\Particles\Particle.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
