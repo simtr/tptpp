@@ -1,6 +1,6 @@
 #ifndef METL_H
 #define METL_H
-#include "Particle.hpp"
+#include <Particles/Particle.hpp>
 
 class Metl : public Particle
 {
