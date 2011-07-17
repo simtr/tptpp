@@ -2,6 +2,7 @@
 #include "ui/Component.hpp"
 #include "ui/Panel.hpp"
 #include "ui/Button.hpp"
+#include "ui/SimulationView.hpp"
 #include <string>
 #include "Layer.hpp"
 using namespace std;
@@ -16,7 +17,9 @@ int main(int argc, char** argv){
 	sf::Sprite mainPanelSprite(mainPanel.Surface.GetImage());
 	// Other UI Components
 	ui::Button testButton(20, 20, 60, 60, "ButtonTest");
+	ui::SimulationView simulationPanel(0, 0, 200, 200);
 	mainPanel.Add(&testButton);
+	mainPanel.Add(&simulationPanel);
 	// Start game loop
 	while (window.IsOpened()){
 		// Process events
