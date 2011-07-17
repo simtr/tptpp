@@ -1,3 +1,5 @@
+#ifndef _PARTICLE_HPP
+#define _PARTICLE_HPP
 class Particle{
 public:
 	int X,Y,Type,LayerIndex;
@@ -10,3 +12,4 @@ public:
 private:
 	template<class T>void changeType(Particle* p,int);
 };
+#endif

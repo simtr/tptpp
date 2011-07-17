@@ -6,10 +6,11 @@
 	<SFML/Graphics.hpp>
 	"Particles/Particle.hpp"
 
-1310931385 /home/jsvlrt/Desktop/Programming/C++/tptpp/src/Particles/Particle.hpp
+1310932100 /home/jsvlrt/Desktop/Programming/C++/tptpp/src/Particles/Particle.hpp
 
-1310913966 source:/home/jsvlrt/Desktop/Programming/C++/tptpp/src/Particles/Particle.cpp
+1310932042 source:/home/jsvlrt/Desktop/Programming/C++/tptpp/src/Particles/Particle.cpp
 	"Particle.hpp"
+	"../GlobalFunctions.hpp"
 
 1310861839 source:/home/jsvlrt/Desktop/Programming/C++/tptpp/src/Sandbox.cpp
 	"../includes/Sandbox.hpp"
@@ -87,5 +88,9 @@
 	<SFML/Graphics.hpp>
 
 1310931643 /home/jsvlrt/Desktop/Programming/C++/tptpp/src/GlobalFunctions.hpp
+	"Layer.hpp"
+
+1310931869 source:/home/jsvlrt/Desktop/Programming/C++/tptpp/src/GlobalFunctions.cpp
+	"GlobalFunctions.hpp"
 	"Layer.hpp"
 

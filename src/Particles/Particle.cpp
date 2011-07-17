@@ -1,4 +1,5 @@
 #include "Particle.hpp"
+#include "../GlobalFunctions.hpp"
 template<class T> void Particle::ChangeType(int type){
 	changeType<T>(this,type);
 }
@@ -15,5 +16,5 @@ void Particle::SetPos(int x, int y, int** partTable){
 }
 void Particle::MoveLogic(int** partTable){
 	if(partTable[X][Y+1]==0)
-		SetPos(X,Y+1,partTable);	
+		SetPos(X,Y+1,partTable);
 }
