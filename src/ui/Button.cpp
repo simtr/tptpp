@@ -21,22 +21,26 @@ void Button::Draw(void* userdata)
 	//Draw component here
 	sf::Text textGraphic(ButtonText);
 	textGraphic.SetCharacterSize(11);
-	textGraphic.SetColor(sf::Color::White);
-    textGraphic.SetPosition(X + 4, X + 4);
+	if(isButtonDown)
+		textGraphic.SetColor(sf::Color::Black);
+	else
+		textGraphic.SetColor(sf::Color::White);
+	sf::FloatRect tempRect = textGraphic.GetRect();
+    textGraphic.SetPosition(ceil(X + Width/2 - tempRect.Width/2), ceil(Y + Height/2 - tempRect.Height/2));
 
 	if(isMouseInside)
 	{
 	    if(isButtonDown)
-            rw->Draw(sf::Shape::Rectangle(X+1, Y+1, Width-2, Width-2, sf::Color::Black, 1.f, sf::Color::Cyan));
+            rw->Draw(sf::Shape::Rectangle(X+2, Y+2, Width-4, Width-4, sf::Color::White, 2.f, sf::Color::Black));
         else
-            rw->Draw(sf::Shape::Rectangle(X+1, Y+1, Width-2, Width-2, sf::Color::Black, 2.f, sf::Color::White));
+            rw->Draw(sf::Shape::Rectangle(X+2, Y+2, Width-4, Width-4, sf::Color::Black, 2.f, sf::Color::White));
 	}
 	else
 	{
 	    if(isButtonDown)
-            rw->Draw(sf::Shape::Rectangle(X+2, Y+2, Width-4, Width-4, sf::Color::Black, 1.f, sf::Color::Cyan));
+            rw->Draw(sf::Shape::Rectangle(X+2, Y+2, Width-4, Width-4, sf::Color::White, 2.f, sf::Color::Black));
         else
-            rw->Draw(sf::Shape::Rectangle(X+2, Y+2, Width-4, Width-4, sf::Color::Black, 2.f, sf::Color::White));
+            rw->Draw(sf::Shape::Rectangle(X+1, Y+1, Width-2, Width-2, sf::Color::Black, 1.f, sf::Color::White));
 	}
 
 	rw->Draw(textGraphic);
