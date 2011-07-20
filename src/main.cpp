@@ -1,74 +1,117 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/System.hpp>
+#include <ui/Component.hpp>
+#include <ui/Panel.hpp>
+#include <ui/Button.hpp>
+#include <ui/State.hpp>
+#include <Sandbox.hpp>
+#include <Layer.hpp>
+
+#include <iostream>
 #include <string>
-#include <sstream> 
+
+#include "ui/Component.hpp"
+#include "ui/Panel.hpp"
+#include "ui/Button.hpp"
+#include "ui/SimulationView.hpp"
+#include <string>
+#include "Layer.hpp"
+#include "Particles/Particle.hpp"
+#include "GlobalDefines.hpp"
+#include "GlobalFunctions.hpp"
 using namespace std;
 
 int main(int argc, char** argv){
+	int windowWidth = 800;
+	int windowHeight = 600;
+
 	// Create the main window
-	sf::RenderWindow App(sf::VideoMode(800, 600, 32), "The Powder Toy: Project C++");
+	sf::RenderWindow window(sf::VideoMode(windowWidth, windowHeight, 32), "The Powder Toy");
+
+    // Create instance of game
+    sim::Sandbox sandboxGame(windowWidth, windowHeight, 4);
+
+	// Other UI Components
+	ui::Button testButton(20, 20, 60, 60, "ButtonTest");
+	sandboxGame.Add(&testButton);
+
+	//add a SimulationView component to Sandbox state
+
+    float TICKRATE = 1000.f/60.f;
+    double TickTime = 0;
+
+    sf::Clock clk;
 	// Start game loop
-	while (App.IsOpened()){ 
-		static bool init = false; 
-		static sf::Clock clock; 
-		float getfps;
-		// Process events
-		if(init == false) 
-		{ 
-			 init = true; 
-			 clock.Reset();
-		} 
-		if(App.GetFrameTime()>0){
-			getfps=60/(App.GetFrameTime());
+	while (window.IsOpened())
+	{
+	    TickTime += clk.GetElapsedTime();
+	    clk.Reset();
+
+		//Tick loop
+		while(TickTime > TICKRATE)
+		{
+		    TickTime -= TICKRATE;
+
+		    // Process events
+            sf::Event Event;
+            while (window.PollEvent(Event))
+            {
+                if(Event.Type == sf::Event::Closed) // Close window : exit
+                {
+                    window.Close();
+                }
+                else if(Event.Type == sf::Event::KeyPressed)
+                {
+                    if(Event.Key.Code == sf::Keyboard::Escape) // Escape key : exit
+                        window.Close();
+                }
+                else if(Event.Type == sf::Event::MouseButtonPressed)
+                {
+                    int buttonCode = 0;
+                    switch(Event.MouseButton.Button)
+                    {
+                    case sf::Mouse::Left:
+                        buttonCode = 1;
+                        break;
+                    case sf::Mouse::Right:
+                        buttonCode = 3;
+                        break;
+                    case sf::Mouse::Middle:
+                        buttonCode = 2;
+                        break;
+                    }
+                    sandboxGame.OnMouseDown(Event.MouseButton.X, Event.MouseButton.Y, buttonCode);
+                }
+                else if(Event.Type == sf::Event::MouseButtonReleased)
+                {
+                    int buttonCode = 0;
+                    switch(Event.MouseButton.Button)
+                    {
+                    case sf::Mouse::Left:
+                        buttonCode = 1;
+                        break;
+                    case sf::Mouse::Right:
+                        buttonCode = 3;
+                        break;
+                    case sf::Mouse::Middle:
+                        buttonCode = 2;
+                        break;
+                    }
+                    sandboxGame.OnMouseUp(Event.MouseButton.X, Event.MouseButton.Y, buttonCode);
+                }
+                else if(Event.Type == sf::Event::MouseMoved)
+                {
+                    sandboxGame.OnMouseMove(Event.MouseMove.X, Event.MouseMove.Y);
+                }
+            }
+
+            sandboxGame.Tick(TICKRATE);
 		}
 
-		sf::Event Event;
-		while (App.PollEvent(Event)){
-			// Close window : exit
-			if (Event.Type == sf::Event::Closed)
-				App.Close();
-			// Escape key : exit
-			if ((Event.Type == sf::Event::KeyPressed) && (Event.Key.Code == sf::Keyboard::Escape))
-				App.Close();
-		}
-		//Clear everything
-		App.Clear();
-		//random shapes
-		App.Draw(sf::Shape::Line(10, 10, 710, 100, 15, sf::Color::Red));
-		App.Draw(sf::Shape::Circle(200, 200, 100, sf::Color::Yellow, 10, sf::Color::Blue));
-		App.Draw(sf::Shape::Rectangle(350, 200, 600, 350, sf::Color::Green));
-
-		//random bouncy text
-		static float textX = 100.0f;
-		static float textY = 150.0f;
-		static int changeX = 1;
-		static int changeY = 1;
-		textX += changeX;
-		textY += changeY;
-		if (textX > 600) changeX = -1;
-		if (textY > 500) changeY = -1;
-		if (textX <= 0) changeX = 1;
-		if (textY <= 0) changeY = 1;
-
-		sf::String String = "The Powder Toy";
-		sf::Text Text(String);
-		Text.SetColor(sf::Color(128, 128, 0));
-		Text.Move(textX,textY);
-
-		App.Draw(Text);
-
-		if(App.GetFrameTime()>0){
-			if(clock.GetElapsedTime() >= 1.0) 
-			{ 
-				clock.Reset(); 
-				stringstream ss; 
-				ss << getfps; 
-				sf::Text dfps("FPS: " + (ss.str()).substr(0,2));
-				App.Draw(dfps); 
-			}  
-		}
-
-		//Draw everything
-		App.Display();
+		window.Clear();
+		sandboxGame.Draw(&window);
+		window.Display();
 	}
-return EXIT_SUCCESS;
+
+    return EXIT_SUCCESS;
 }
