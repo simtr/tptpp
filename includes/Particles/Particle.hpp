@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 class Particle{
 public:
-	int X,Y,Type,LayerIndex,Life,SprkLife,Ctype;
+	float X,Y,Type,LayerIndex,Life,SprkLife,Ctype;
 	//for extra temps if we need them.
 	int Tmp[3];
 	sf::Color partColor;
@@ -16,7 +16,7 @@ public:
 	virtual void MoveLogic(Particle*** partTable);
 	virtual void SpawnLogic(){}
 	virtual void Render(sf::RenderWindow*){};
-	void SetPos(int x, int y, Particle*** partTable);
+	void SetPos(float x, float y, Particle*** partTable);
 private:
 template<class T> void changeType(Particle* p, int type){
 	delete this;
