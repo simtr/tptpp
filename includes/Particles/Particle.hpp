@@ -14,6 +14,7 @@ public:
 }
 	virtual void Logic(){};
 	virtual void MoveLogic(int** partTable);
+	virtual void SpawnLogic(){}
 	virtual void Render(sf::RenderWindow*){};
 	void SetPos(int x, int y, int** partTable);
 private:
