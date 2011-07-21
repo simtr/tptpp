@@ -4,7 +4,7 @@
 class Particle{
 public:
 	float X,Y;
-	int Type,LayerIndex,Life,SprkLife,Ctype;
+	int Type,LayerIndex,Life,SprkLife,Ctype,XPos,YPos;
 	//for extra temps if we need them.
 	int Tmp[3];
 	sf::Color partColor;
