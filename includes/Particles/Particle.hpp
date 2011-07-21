@@ -3,7 +3,8 @@
 #include <SFML/Graphics.hpp>
 class Particle{
 public:
-	float X,Y,Type,LayerIndex,Life,SprkLife,Ctype;
+	float X,Y;
+	int Type,LayerIndex,Life,SprkLife,Ctype;
 	//for extra temps if we need them.
 	int Tmp[3];
 	sf::Color partColor;
