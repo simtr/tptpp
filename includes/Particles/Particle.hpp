@@ -13,10 +13,10 @@ public:
 	changeType<T>(this,type);
 }
 	virtual void Logic(){};
-	virtual void MoveLogic(int** partTable);
+	virtual void MoveLogic(Particle*** partTable);
 	virtual void SpawnLogic(){}
 	virtual void Render(sf::RenderWindow*){};
-	void SetPos(int x, int y, int** partTable);
+	void SetPos(int x, int y, Particle*** partTable);
 private:
 template<class T> void changeType(Particle* p, int type){
 	delete this;

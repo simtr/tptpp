@@ -7,7 +7,7 @@ public:
 	int Index;
 	int ResX,ResY,ScaleFactor;
 	int MaxParts;
-	int** PartTable;
+	Particle*** PartTable;
 	Particle* Parts;
 	Layer(int,int,int);
 	~Layer();
