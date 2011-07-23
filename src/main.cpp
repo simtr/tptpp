@@ -5,9 +5,7 @@
 #include <string>
 
 #include "ui/Component.hpp"
-#include "ui/Panel.hpp"
 #include "ui/Button.hpp"
-#include "ui/SimulationView.hpp"
 #include "ui/State.hpp"
 #include "Sandbox.hpp"
 #include "Layer.hpp"
