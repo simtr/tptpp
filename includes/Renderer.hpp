@@ -1,9 +1,9 @@
-#ifndef PARTICLERENDERER_HPP
-#define PARTICLERENDERER_HPP
+#ifndef RENDERER_HPP
+#define RENDERER_HPP
 #include "Layer.hpp"
 #include <SFML/Graphics.hpp>
 
-class ParticleRenderer
+class Renderer
 {
 public:
 	virtual void Render(Layer* simLayer, sf::RenderTarget* rt);
