@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 #include <ui/SimulationView.hpp>
-#include <ParticleRenderer.hpp>
+#include <Renderer.hpp>
 #include <Layer.hpp>
 
 #include <iostream>
@@ -52,7 +52,7 @@ void SimulationView::OnMouseLeave(int x, int y, int dx, int dy)
 
 }
 
-void SimulationView::AttachRenderer(ParticleRenderer* newRenderer)
+void SimulationView::AttachRenderer(Renderer* newRenderer)
 {
 	renderer = newRenderer;
 }

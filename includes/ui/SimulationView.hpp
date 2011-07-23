@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <ui/Component.hpp>
 #include <Layer.hpp>
-#include <ParticleRenderer.hpp>
+#include <Renderer.hpp>
 #include <string>
 
 namespace ui
@@ -23,11 +23,11 @@ namespace ui
 
 		virtual void Draw(void* userdata);
 
-		void AttachRenderer(ParticleRenderer *newRenderer);
+		void AttachRenderer(Renderer *newRenderer);
 		void AttachLayer(Layer *simLayer);
 
 	private:
-		ParticleRenderer *renderer;
+		Renderer *renderer;
 		Layer *simulation;
 	};
 }

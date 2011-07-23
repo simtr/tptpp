@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <ui/State.hpp>
+#include <Renderer.hpp>
+#include <Layer.hpp>
 
 namespace sim
 {
@@ -14,6 +16,10 @@ namespace sim
 		/* Construct sandbox with the given size (in particles) and the scaling
 		factor for low resolution simulation (air, gravity, etc...) */
 		Sandbox(int width, int height, int subdivision);
+		virtual void Draw(void *userdata);
+	private:
+			Renderer renderer;
+			Layer simLayer;
 	};
 }
 #endif
