@@ -1,4 +1,4 @@
-#include "../includes/Sandbox.hpp"
+#include "Sandbox.hpp"
 
 #include <ui/State.hpp>
 #include <ui/Component.hpp>

@@ -95,5 +95,5 @@ void Button::OnMouseLeave(int x, int y, int dx, int dy)
 
 void Button::DoAction()
 {
-    std::cout << "\nDo action!";
+    std::cout << "Do action!"<<std::endl;
 }
