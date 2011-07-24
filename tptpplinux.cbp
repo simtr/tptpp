@@ -109,18 +109,14 @@
 		<Unit filename="includes/GlobalDefines.hpp" />
 		<Unit filename="includes/GlobalFunctions.hpp" />
 		<Unit filename="includes/Layer.hpp" />
-		<Unit filename="includes/ParticleRenderer.hpp" />
 		<Unit filename="includes/Particles/Metl.hpp" />
 		<Unit filename="includes/Particles/Particle.hpp" />
 		<Unit filename="includes/Sandbox.hpp" />
 		<Unit filename="includes/ui/Button.hpp" />
 		<Unit filename="includes/ui/Component.hpp" />
-		<Unit filename="includes/ui/Panel.hpp" />
-		<Unit filename="includes/ui/SimulationView.hpp" />
 		<Unit filename="includes/ui/State.hpp" />
 		<Unit filename="src/GlobalFunctions.cpp" />
 		<Unit filename="src/Layer.cpp" />
-		<Unit filename="src/ParticleRenderer.cpp" />
 		<Unit filename="src/Particles/Metl.cpp" />
 		<Unit filename="src/Particles/Particle.cpp" />
 		<Unit filename="src/Sandbox.cpp" />
@@ -128,8 +124,6 @@
 		<Unit filename="src/makefile" />
 		<Unit filename="src/ui/Button.cpp" />
 		<Unit filename="src/ui/Component.cpp" />
-		<Unit filename="src/ui/Panel.cpp" />
-		<Unit filename="src/ui/SimulationView.cpp" />
 		<Unit filename="src/ui/State.cpp" />
 		<Extensions>
 			<code_completion />
