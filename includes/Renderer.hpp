@@ -7,6 +7,6 @@ class Renderer
 {
 public:
     //A GLITCH WITH C++ IS THAT ALL VIRTUAL FUNCTIONS MUST BE DEFINED AND DECLARED IN THE HEADER!
-	virtual void Render(Layer* simLayer, sf::RenderTarget* rt){}
+        virtual void Render(Layer* simLayer, sf::RenderTarget* rt){rt->Draw(sf::Shape::Circle(20, 20, 50, sf::Color::White));}
 };
 #endif
