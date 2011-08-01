@@ -16,7 +16,8 @@ void Particle::MoveLogic(Particle*** partTable){
                 SetPos(X,Y+1,partTable);
 }
 sf::Shape Particle::GetSfPoint(){
-    return(sf::Shape::Circle(sf::Vector2f(X,Y),1,sf::Color::Blue));
+    return(sf::Shape::Rectangle(sf::FloatRect(X,Y,1,1),sf::Color::Red));
 
 }
+
 #endif

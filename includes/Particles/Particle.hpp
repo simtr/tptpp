@@ -1,6 +1,7 @@
 #ifndef _PARTICLE_HPP
 #define _PARTICLE_HPP
 #include <SFML/Graphics.hpp>
+#include <iostream>
 class Particle{
 public:
 	float X,Y;
@@ -12,7 +13,7 @@ public:
         void SetPos(float x, float y, Particle*** partTable);
         Particle(){Type =0; X=0.0f;Y=0.0f;return;};
     template<class T> void ChangeType(int type){
-	changeType<T>(this,type);
+        changeType<T>(this,type);
 }
 	virtual void Logic(){};
 	virtual void MoveLogic(Particle*** partTable);
@@ -25,8 +26,9 @@ template<class T> void changeType(Particle* p, int type){
         int X2 = this->X;
         int Y2 = this->Y;
         delete this;
-	p = new T;
-	p->Type = type;
+        p = new T;
+        p->Type = type;
+
         p->X=X2;
         p->Y=Y2;
 }
