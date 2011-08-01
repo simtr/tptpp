@@ -14,7 +14,8 @@ HEADERS += \
     ../includes/GlobalDefines.hpp \
     ../includes/ui/State.hpp \
     ../includes/ui/Component.hpp \
-    ../includes/ui/Button.hpp
+    ../includes/ui/Button.hpp \
+    ../includes/Particles/PartList.hpp
 
 SOURCES += \
     ../src/Sandbox.cpp \

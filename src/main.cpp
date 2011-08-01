@@ -26,8 +26,7 @@ int main(int argc, char** argv){
 
 	// Other UI Components
 	ui::Button testButton(20, 20, 60, 60, "ButtonTest");
-	sandboxGame.Add(&testButton);
-
+        sandboxGame.Add(&testButton);
 	//add a SimulationView component to Sandbox state
 
 	float TICKRATE = 1000.f/60.f;

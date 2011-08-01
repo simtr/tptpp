@@ -9,20 +9,27 @@ public:
 	int Tmp[3];
 	sf::Color partColor;
 	int Index;
-	Particle(){Type = 0;return;};
+        void SetPos(float x, float y, Particle*** partTable);
+        Particle(){Type =0; X=0.0f;Y=0.0f;return;};
     template<class T> void ChangeType(int type){
 	changeType<T>(this,type);
 }
 	virtual void Logic(){};
 	virtual void MoveLogic(Particle*** partTable);
 	virtual void SpawnLogic(){}
-	virtual void Render(sf::RenderWindow*){};
-	void SetPos(float x, float y, Particle*** partTable);
+        virtual void Render(sf::RenderTarget*){};
+
+        sf::Shape GetSfPoint();
 private:
 template<class T> void changeType(Particle* p, int type){
-	delete this;
+        int X2 = this->X;
+        int Y2 = this->Y;
+        delete this;
 	p = new T;
 	p->Type = type;
+        p->X=X2;
+        p->Y=Y2;
 }
 };
+#include <Particles/PartList.hpp>
 #endif

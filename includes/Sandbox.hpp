@@ -5,6 +5,7 @@
 #include <ui/State.hpp>
 #include <Renderer.hpp>
 #include <Layer.hpp>
+#include <GlobalDefines.hpp>
 
 namespace sim
 {

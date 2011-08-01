@@ -8,15 +8,14 @@ Layer::Layer(int resX,int resY,int scaleFactor)
 	PartTable = new Particle**[ResX];
 	for(int i = 0; i<ResX;i++)
 		PartTable[i] = new Particle*[ResY];
-	Parts = new Particle[MaxParts];
 	for(int i = 0; i <MaxParts;i++){
-		Parts[i].Index=i;
-		Parts[i].LayerIndex=Index;
+                Parts[i]->Index=i;
+                Parts[i]->LayerIndex=Index;
 	}
 }
 Layer::~Layer(){
 	for(int i = 0; i < ResX;i++){
 		delete[] PartTable[i];
 	}
-	delete Parts;
+
 }

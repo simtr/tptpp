@@ -2,13 +2,14 @@
 #define _LAYER_HPP
 #include <SFML/Graphics.hpp>
 #include <Particles/Particle.hpp>
+#include <vector>
 class Layer{
 public:
 	int Index;
 	int ResX,ResY,ScaleFactor;
 	int MaxParts;
 	Particle*** PartTable;
-	Particle* Parts;
+        std::vector<Particle*> Parts;
 	Layer(int,int,int);
 	~Layer();
 };
