@@ -5,7 +5,7 @@
 #include <vector>
 class Layer{
 public:
-	int Index;
+        int Index;
 	int ResX,ResY,ScaleFactor;
 	int MaxParts;
 	Particle*** PartTable;

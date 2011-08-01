@@ -2,7 +2,9 @@
 
 #include <ui/State.hpp>
 #include <ui/Component.hpp>
+#include <stdlib.h>
 #include <iostream>
+#include <time.h>
 
 using namespace sim;
 
@@ -11,11 +13,12 @@ base(width, height),
 renderer(),
 simLayer(width, height, subdivision)
 {
+     srand ( time(NULL) );
     //testing
-    simLayer.Parts[0]->X=0;
-    simLayer.Parts[0]->Y=0;
-    simLayer.Parts[0]->ChangeType<Metl>(METL);
-    simLayer.Parts[0]->SetPos(200,200,simLayer.PartTable);
+    for(int i = 0; i < 500;i++){
+    simLayer.Parts[i]->ChangeType<Metl>(METL);
+    simLayer.Parts[i]->SetPos(i,rand() % 501 ,simLayer.PartTable);
+}
 }
 
 void Sandbox::Draw(void *userdata)
