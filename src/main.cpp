@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+#include<sstream>
 
 #include "ui/Component.hpp"
 #include "ui/Button.hpp"
@@ -15,6 +16,11 @@
 using namespace std;
 
 int main(int argc, char** argv){
+    const int fpsmax=150;
+    float FPS[fpsmax];
+    for(int i = 0; i < fpsmax;i++)
+        FPS[i]=60;
+    float avgFPS;
 	int windowWidth = 800;
 	int windowHeight = 600;
 
@@ -31,13 +37,32 @@ int main(int argc, char** argv){
 
 	float TICKRATE = 1000.f/60.f;
 	double TickTime = 0;
-
+        stringstream fps;
+        fps<<"";
+        sf::Text textGraphic(fps.str());
+        textGraphic.SetCharacterSize(11);
+        textGraphic.SetColor(sf::Color::White);
+        textGraphic.SetPosition(650,5);
 	sf::Clock clk;
 	// Start game loop
+        avgFPS=-10;
 	while (window.IsOpened())
 	{
 		TickTime += clk.GetElapsedTime();
 		clk.Reset();
+                fps.str("");
+                fps<<"FPS: ";
+                avgFPS=0;
+                for (int i = 0; i < fpsmax-1;i++){
+                avgFPS+=FPS[i];
+                FPS[i]=FPS[i+1];
+                }
+                FPS[fpsmax-1]= (1.0f / (float)(TickTime/1000));
+                avgFPS+=FPS[fpsmax-1];
+                avgFPS/=fpsmax;
+                fps <<(int)avgFPS;
+                textGraphic.SetString(fps.str());
+
 
 		//Tick loop
 		while(TickTime > TICKRATE)
@@ -102,7 +127,9 @@ int main(int argc, char** argv){
 
 		window.Clear();
 		sandboxGame.Draw(&window);
+                window.Draw(textGraphic);
 		window.Display();
+
 	}
 
 	window.Close();
