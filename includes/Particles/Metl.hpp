@@ -7,7 +7,7 @@ class Metl : public Particle
     public:
         Metl();
         virtual ~Metl();
-        void Render(sf::RenderTarget* rt);
+        void Render(sf::Image&);
     private:
 };
 

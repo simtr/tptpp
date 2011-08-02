@@ -19,7 +19,7 @@ namespace sim
 		Sandbox(int width, int height, int subdivision);
 		virtual void Draw(void *userdata);
 	private:
-			Renderer renderer;
+                        Renderer renderer;
 			Layer simLayer;
 	};
 }

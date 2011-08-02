@@ -8,5 +8,8 @@ class Renderer
 public:
     //A GLITCH WITH C++ IS THAT ALL VIRTUAL FUNCTIONS MUST BE DEFINED AND DECLARED IN THE HEADER!
         virtual void Render(Layer* simLayer, sf::RenderTarget* rt);
+        Renderer(int,int);
+        int Width,Height;
+        sf::Image PixBuff;
 };
 #endif

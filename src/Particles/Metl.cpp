@@ -9,8 +9,8 @@ Metl::~Metl()
 {
     //dtor
 }
-void Metl::Render(sf::RenderTarget* rt)
+void Metl::Render(sf::Image& pixbuff)
 {
-rt->Draw(GetSfPoint());
+    pixbuff.SetPixel(XPos,YPos,sf::Color::Red);
 
 }

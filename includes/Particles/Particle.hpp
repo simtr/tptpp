@@ -18,7 +18,7 @@ public:
 	virtual void Logic(){};
 	virtual void MoveLogic(Particle*** partTable);
 	virtual void SpawnLogic(){}
-        virtual void Render(sf::RenderTarget*){};
+        virtual void Render(sf::Image&){};
 
         sf::Shape GetSfPoint();
 private:
