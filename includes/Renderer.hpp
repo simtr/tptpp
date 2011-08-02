@@ -11,5 +11,6 @@ public:
         Renderer(int,int);
         int Width,Height;
         sf::Image PixBuff;
+           sf::Sprite spr;
 };
 #endif

@@ -3,7 +3,6 @@
 #include <iostream>
 #include <GlobalDefines.hpp>
 void Renderer::Render(Layer* simLayer, sf::RenderTarget* rt){
-    sf::Sprite spr;
 
         PixBuff.Create(Width,Height);
 
@@ -13,12 +12,14 @@ void Renderer::Render(Layer* simLayer, sf::RenderTarget* rt){
         }
     }
      spr.SetImage(PixBuff);
-     spr.SetPosition(0,0);
      rt->Draw(spr);
     //rt->Draw(sf::Shape::Circle(20, 20, 50, sf::Color::White));
 }
 Renderer::Renderer(int width, int height)
 {
+
+
+    spr.SetPosition(0,0);
 
 Width = width;
 Height = height;
