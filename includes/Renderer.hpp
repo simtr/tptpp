@@ -10,7 +10,7 @@ public:
         virtual void Render(Layer* simLayer, sf::RenderTarget* rt);
         Renderer(int,int);
         int Width,Height;
-        sf::Image PixBuff;
-           sf::Sprite spr;
+        sf::RenderTexture PixBuff;
+        sf::Sprite spr;
 };
 #endif
