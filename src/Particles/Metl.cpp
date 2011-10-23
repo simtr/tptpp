@@ -2,7 +2,7 @@
 
 Metl::Metl()
 {
-    //ctor
+   partColor = sf::Color(55,55,55,255);
 }
 
 Metl::~Metl()
