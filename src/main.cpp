@@ -62,7 +62,10 @@ int main(int argc, char** argv)
         FPS[fpsmax-1]= (1.0f / (float)(TickTime/1000));
         avgFPS+=FPS[fpsmax-1];
         avgFPS/=fpsmax;
+        if(avgFPS<1000 && avgFPS>0)
         fps <<(int)avgFPS;
+        else
+        fps <<(int)(1.0f / (float)(TickTime/1000));
         textGraphic.SetString(fps.str());
 
 
