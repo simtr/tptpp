@@ -8,18 +8,18 @@
 using namespace ui;
 
 State::State(int w, int h) :
-mouseX(0),
-mouseY(0),
-mouseXP(0),
-mouseYP(0),
-width(w),
-height(h)
+    mouseX(0),
+    mouseY(0),
+    mouseXP(0),
+    mouseYP(0),
+    width(w),
+    height(h)
 {
 }
 
 State::~State()
 {
-	Components.~vector(); // just in case
+    Components.~vector(); // just in case
 }
 
 void State::Add(Component* child)
@@ -40,24 +40,25 @@ void State::Remove(Component* child)
 
 void State::Draw(void* userdata)
 {
-	//draw
-	for(int i = 0; i < Components.size(); i++)
-		if(Components[i]->Visible)
-		{
-			if(AllowExclusiveDrawing)
-				Components[i]->Draw(userdata);
-			else
-				if(
-					Components[i]->X + Components[i]->Width >= 0 &&
-					Components[i]->Y + Components[i]->Height >= 0 &&
-					Components[i]->X < width &&
-					Components[i]->Y < height )
-                {
-                    Components[i]->Draw(userdata);
-                }
-
-		}
-
+    //draw
+    for(int i = 0; i < Components.size(); i++)
+    {
+        if(Components[i]->Visible)
+        {
+            if(AllowExclusiveDrawing)
+            {
+                Components[i]->Draw(userdata);
+            }
+            else if(
+                Components[i]->X + Components[i]->Width >= 0 &&
+                Components[i]->Y + Components[i]->Height >= 0 &&
+                Components[i]->X < width &&
+                Components[i]->Y < height )
+            {
+                Components[i]->Draw(userdata);
+            }
+        }
+    }
 }
 
 void State::Tick(float dt)

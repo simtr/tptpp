@@ -5,10 +5,11 @@ TOOL := mingw-shared-win32
 COMPILER := g++
 
 BUILDDIR := $(ROOT)/build/
+INCLUDES := $(ROOT)/includes/
 EXTINCLUDE := $(ROOT)/extinclude/
 EXTLIBS := $(ROOT)/extlibs/$(TOOL)/
 
-CFLAGS := -I$(EXTINCLUDE)
+CFLAGS := -I$(EXTINCLUDE) -I$(INCLUDES)
 OFLAGS := -O3 -ffast-math -ftree-vectorize -funsafe-math-optimizations
 LFLAGS := -lm -lsfml-window -lsfml-system -lsfml-main -lsfml-graphics -L$(EXTLIBS)
 MFLAGS := -march=native -DX86 -DX86_SSE3 -msse3

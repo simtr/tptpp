@@ -1,7 +1,8 @@
 #ifndef RENDERER_HPP
 #define RENDERER_HPP
 #include "Layer.hpp"
-#include <SFML/Graphics.hpp>
+#include <SFML/Graphics/RenderTarget.hpp>
+#include <SFML/Graphics/RenderTexture.hpp>
 
 class Renderer
 {

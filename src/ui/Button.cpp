@@ -6,11 +6,11 @@
 using namespace ui;
 
 Button::Button(int x, int y, int width, int height, const std::string& buttonText) : Component(x, y, width, height),
-Toggleable(false),
-ButtonText(buttonText),
-isMouseInside(false),
-isButtonDown(false),
-state(false)
+    Toggleable(false),
+    ButtonText(buttonText),
+    isMouseInside(false),
+    isButtonDown(false),
+    state(false)
 {
 }
 
@@ -48,11 +48,14 @@ void Button::Draw(void* userdata)
 
 void Button::OnMouseUnclick(int x, int y, unsigned int button)
 {
-    if(button != 1) return; //left click only!
+    if(button != 1)
+    {
+        return; //left click only!
+    }
 
-	if(isButtonDown)
-	{
-	    if(state)
+    if(isButtonDown)
+    {
+        if(state)
         {
             state = false;
         }
@@ -64,23 +67,23 @@ void Button::OnMouseUnclick(int x, int y, unsigned int button)
             }
             DoAction();
         }
-	}
+    }
 
-	isButtonDown = false;
+    isButtonDown = false;
 }
 
 void Button::OnMouseUp(int x, int y, unsigned int button) //mouse unclick is called before this
 {
     if(button != 1) return; //left click only!
 
-	isButtonDown = false;
+    isButtonDown = false;
 }
 
 void Button::OnMouseClick(int x, int y, unsigned int button)
 {
     if(button != 1) return; //left click only!
 
-	isButtonDown = true;
+    isButtonDown = true;
 }
 
 void Button::OnMouseEnter(int x, int y, int dx, int dy)
@@ -90,7 +93,7 @@ void Button::OnMouseEnter(int x, int y, int dx, int dy)
 
 void Button::OnMouseLeave(int x, int y, int dx, int dy)
 {
-	isMouseInside = false;
+    isMouseInside = false;
 }
 
 void Button::DoAction()

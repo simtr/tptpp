@@ -1,7 +1,11 @@
 #ifndef _PARTICLE_HPP
 #define _PARTICLE_HPP
-#include <SFML/Graphics.hpp>
+
 #include <iostream>
+
+#include <SFML/Graphics/RenderTexture.hpp>
+#include <SFML/Graphics/Shape.hpp>
+
 class Particle{
 public:
 	float X,Y;
@@ -18,7 +22,7 @@ public:
 	virtual void Logic(){};
 	virtual void MoveLogic(Particle*** partTable);
 	virtual void SpawnLogic(){}
-        virtual void Render(sf::Image&){};
+        virtual void Render(sf::RenderTexture&){};
 
         sf::Shape GetSfPoint();
 private:

@@ -4,12 +4,12 @@
 using namespace ui;
 
 Component::Component(int x, int y, int width, int height):
-X(x),
-Y(y),
-Width(width),
-Height(height),
-Enabled(true),
-Visible(true)
+    X(x),
+    Y(y),
+    Width(width),
+    Height(height),
+    Enabled(true),
+    Visible(true)
 {
 }
 
