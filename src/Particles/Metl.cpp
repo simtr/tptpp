@@ -2,11 +2,13 @@
 
 Metl::Metl()
 {
+
    partColor = sf::Color(55,55,55,255);
 }
 
 Metl::~Metl()
 {
+
     //dtor
 }
 void Metl::Render(sf::RenderTexture& pixbuff)
