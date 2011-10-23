@@ -20,6 +20,7 @@ void Renderer::Render(Layer* simLayer, sf::RenderTarget* rt)
 }
 Renderer::Renderer(int width, int height)
 {
+
     spr.SetPosition(0,0);
 
     Width = width;

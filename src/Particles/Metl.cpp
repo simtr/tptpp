@@ -2,12 +2,14 @@
 
 Metl::Metl()
 {
+
    partColor = sf::Color(55,55,55,255);
    myShape = sf::Shape::Rectangle(X,Y,1,1,partColor);
 }
 
 Metl::~Metl()
 {
+
     //dtor
 }
 void Metl::Render(sf::RenderTexture& pixbuff)
