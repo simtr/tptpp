@@ -33,7 +33,8 @@ public:
         virtual void Render(sf::RenderTexture&){};
 
         sf::Shape GetSfPoint();
-private:
+protected:
+      sf::Shape myShape;  //frankbro test
 };
 #include <Particles/PartList.hpp>
 #endif

@@ -4,7 +4,7 @@
 #include <GlobalDefines.hpp>
 void Renderer::Render(Layer* simLayer, sf::RenderTarget* rt)
 {
-    PixBuff.Create(Width,Height);
+    PixBuff.Clear();
 
     for(int i = 0; i < simLayer->MaxParts;i++)
     {
@@ -24,5 +24,6 @@ Renderer::Renderer(int width, int height)
 
     Width = width;
     Height = height;
+    PixBuff.Create(Width,Height);
 }
 

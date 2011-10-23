@@ -10,6 +10,7 @@ void Particle::SetPos(float x, float y, Particle*** partTable)
     Y=y;
     XPos = (int)X;
     YPos = (int)Y;
+    //myShape = sf::Shape::Rectangle(X,Y,1,1,partColor);
 }
 void Particle::MoveLogic(Particle*** partTable)
 {
