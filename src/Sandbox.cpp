@@ -30,8 +30,9 @@ Sandbox::Sandbox(int width, int height, int subdivision) :
 }
 
 void Sandbox::Draw(void *userdata)
-{
+{       sf::RenderWindow* rw = reinterpret_cast<sf::RenderWindow*>(userdata);
+        renderer.Render(&simLayer, rw);
         State::Draw(userdata);
-	sf::RenderWindow* rw = reinterpret_cast<sf::RenderWindow*>(userdata);
-	renderer.Render(&simLayer, rw);
+
+
 }
