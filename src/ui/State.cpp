@@ -19,7 +19,7 @@ State::State(int w, int h) :
 
 State::~State()
 {
-    Components.~vector(); // just in case
+    //Components.~vector(); // just in case // devnote : Nope.jpg Nate :3 -frankbro
 }
 
 void State::Add(Component* child)
