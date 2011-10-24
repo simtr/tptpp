@@ -1,5 +1,7 @@
 #include <Particles/Metl.hpp>
 
+#include <SFML/OpenGL.hpp>
+
 Metl::Metl()
 {
 
@@ -12,10 +14,10 @@ Metl::~Metl()
 
     //dtor
 }
-void Metl::Render(sf::RenderTexture& pixbuff)
+/*void Metl::Render(sf::RenderTexture& pixbuff)
 {
     //pixbuff.SetPixel(XPos,YPos,sf::Color::Red); // devnote : since its not image, I'll do a temp drawing with shape::rect
     //pixbuff.Draw(sf::Shape::Rectangle(X,Y,1,1,partColor));
     myShape.SetPosition(X,Y);
     pixbuff.Draw(myShape);
-}
+}*/

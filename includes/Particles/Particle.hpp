@@ -30,7 +30,7 @@ public:
 	virtual void Logic(){};
 	virtual void MoveLogic(Particle*** partTable);
 	virtual void SpawnLogic(){}
-        virtual void Render(sf::RenderTexture&){};
+        virtual void Render(sf::RenderTexture&);
 
         sf::Shape GetSfPoint();
 protected:
